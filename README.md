@@ -4,3 +4,5 @@ This programme is meant to be a a quiz where you have to guess the capital of th
 ### This is the updated version of the quiz, with the big change being that I looped through the questions by storing them in an array instead of constantly having to "if...else" for each question. Allow the code base to be smaller and allows it to be more dynamic in the case I wanted to add more questions
 
 ### If you want to add more questions to the program then feel free to fork it and request your changes. Happy coding :)
+
+##### P.S. the original version of the quiz (v1.0) is in a different branch in case you want to view it ;)
