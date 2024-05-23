@@ -1,24 +1,34 @@
 import time
-#Introduction
+
+# Countries for the quiz
+countries = [
+  "the United States of America", "Jamaica", "Brazil", "New York", "California", "Nigeria", "Indonesia", 
+  "Poland"
+]
+
+# Answers for each country
+capitals = [
+  "washington dc", "kingston", "brasilia", "albany", "sacramento", "abuja", "jakarta", "warsaw"
+]
+
+# Introduction
 print("Hello, and welcome to the Capital Quiz!")
-time.sleep(2)
+time.sleep(1)
 print("The quiz where we tell you countries/states/provinces and you tell thier capital")
-time.sleep(3)
+time.sleep(2)
 name=input("What is your name? ")
 print("Nice to meet you", name + "!")
 time.sleep(1)
-age=int(input("How old are you? "))
+age = int(input("How old are you? "))
 
-if age <= 11:
+if age <= 12:
   print("Ok so you're a kid")
-elif age in range(12, 17):
+elif age in range(13, 20):
   print("Ok so you're a teenager")
-elif age in range(18, 59):
+elif age in range(20, 60):
   print("Ok so you're an adult")
 elif age >= 60:
   print("Ok so you're an elder")
-else:
-  int(input("Please enter your age as a number "))
 
 #Instructions
 time.sleep(1)
@@ -27,113 +37,32 @@ print("Awesome!")
 time.sleep(1)
 print("Let's begin!")
 time.sleep(1)
-print("p.s.; when typing in the answers, please do not put any signs or periods etc. just the word. If the answer has two words, you can leave a space")
-time.sleep(2)
-print("You're also not allowed to use google and if you get a question wrong, we will take away one point")
-#Scores
+print("p.s.; when typing in the answers, please do not put any signs or periods etc. just the word. If the answer has two words, you can leave a space\n")
+
+# Initialize the score
 score = 0
-print("Score:", score)
-usa = input("What is the capital of the USA? ").lower()
 
-#Quiz
-if usa == "washington dc":
-  print("Correct")
-  score += 1
-  print("Score", score)
-else:
-  print("Incorrect, it's Washington D.C.")
-  score -= 1
-  print("Score", score)
+# Keep track of index for the countries array
+index = 0
 
+# Display questions dynamically
+for x in capitals:
+  user_answer = input(f"What is the capital of {countries[index]}? ")
+
+  if user_answer == x:
+    print("Correct!")
+    score += 1
+  else:
+    print("Incorrect, it's", x)
+  
+  index += 1
+
+#Total Score
 time.sleep(1)
-jamaica = input("What is the capital of Jamaica? ").lower()
-
-if jamaica == "kingston":
-  print("Correct")
-  score += 1
-  print("Score:", score)
-else:
-  print("Incorrect, it's Kingston")
-  score -= 1
-  print("Score:", score)
-
-time.sleep(1)
-brazil = input("What is the capital of Brazil? ").lower()
-
-if brazil == "brasilia":
-  print("Correct")
-  score += 1
-  print("Score:", score)
-else:
-  print("Incorrect, it's Brasilia")
-  score -= 1
-  print("Score:", score)
-
-time.sleep(1)
-new_york = input("What is the capital of New York? ").lower()
-
-if new_york == "albany":
-  print("Correct")
-  score+=1
-  print("Score:", score)
-else:
-  print("Incorrect, it's Albany")
-  score -= 1
-  print("Score:", score)
-
-time.sleep(1)
-california = input("What is the capital of california? ").lower()
-
-if california == "sacremento":
-  print("Correct")
-  score += 1
-  print("Score:", score)
-else:
-  print("Incorrect, it's Sacremento")
-  score -= 1
-  print("Score:", score)
-
-time.sleep(1)
-nigeria = input("What is the capital of Nigeria? ").lower()
-
-if nigeria == "abuja":
-  print("Correct")
-  score += 1
-  print("Score:", score)
-else:
-  print("Incorrect, it's Abuja")
-  score -= 1
-  print("Score:", score)
-
-time.sleep(1)
-indonesia = input("What is the capital of Indonesia? ").lower()
-
-if indonesia == "jakarta":
-  print("Correct")
-  score += 1
-  print("Score", score)
-else:
-  print("Incorrect, it's Jakarta")
-  score -= 1
-  print("Score:", score)
-
-time.sleep(1)
-poland = input("What is the capital of Poland? ").lower()
-
-if poland == "warsaw":
-  print("Correct")
-  score += 1
-  print("Score:", score)
-else:
-  print("Incorrect, it's Warsaw")
-  score -= 1
-  print("Score:", score)
-
-time.sleep(2)
 print("You got", score ,"out of 8 in this quiz")
 time.sleep(1)
 
-percent = (score / 8) * 100
+percent = int((score / len(countries)) * 100)
 
 print("Which means you got " + str(percent) + "%")
 time.sleep(1)
