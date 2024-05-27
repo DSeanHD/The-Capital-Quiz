@@ -19,7 +19,13 @@ time.sleep(2)
 name=input("What is your name? ")
 print("Nice to meet you", name + "!")
 time.sleep(1)
-age = int(input("How old are you? "))
+
+while True:
+  try:
+    age = int(input("How old are you? "))
+    break
+  except ValueError:
+    print("Please enter a number")
 
 if age <= 12:
   print("Ok so you're a kid")
